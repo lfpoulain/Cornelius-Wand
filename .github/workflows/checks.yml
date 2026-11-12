@@ -45,3 +45,21 @@ jobs:
         run: node --check custom_components/cornelius_wand/www/panel.js
       - name: Tester le panneau
         run: node --test tests/frontend/*.test.cjs
+
+  # Ce qu'exige le Marketplace de Home Assistant (2026.11+) pour installer l'intégration
+  hassfest:
+    name: Manifeste (hassfest)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: home-assistant/actions/hassfest@master
+
+  hacs:
+    name: Marketplace (HACS)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: hacs/action@main
+        with:
+          category: integration

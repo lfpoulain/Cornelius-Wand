@@ -127,7 +127,8 @@ Le dossier [custom_components/cornelius_wand/](../custom_components/cornelius_wa
 
 ### Installation
 
-1. Copier le dossier `custom_components/cornelius_wand` dans `/config/custom_components/` de Home Assistant (Samba, SSH ou app File editor), puis redémarrer.
+1. **Avec le Marketplace** (Home Assistant 2026.11 et plus, qui y intègre HACS) : [ouvrir le dépôt dans le Marketplace](https://my.home-assistant.io/redirect/hacs_repository/?owner=lfpoulain&repository=Cornelius-Wand&category=integration), ou **Paramètres → Marketplace → ⋮ → Dépôts personnalisés**, adresse `https://github.com/lfpoulain/Cornelius-Wand`, catégorie **Intégration**. Installer **Baguette Cornelius** : les nouvelles versions apparaissent ensuite comme des mises à jour, avec leurs notes. Le Marketplace avertit que l’intégration vient d’un auteur tiers, pas du projet Home Assistant.
+   **À la main** (versions plus anciennes, ou sans le Marketplace) : copier le dossier `custom_components/cornelius_wand` dans `/config/custom_components/` (Samba, SSH ou app File editor), puis redémarrer.
 2. Lancer un sort, ou simplement bouger la baguette pour la réveiller : Home Assistant propose **Baguette Cornelius** dans les appareils découverts (il faut un scan actif, voir l'étape 3). Sinon : **Paramètres → Appareils et services → Ajouter une intégration → Baguette Cornelius**.
 3. Dans les options de l'intégration :
 

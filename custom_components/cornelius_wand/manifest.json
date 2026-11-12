@@ -7,9 +7,7 @@
       "connectable": false
     }
   ],
-  "codeowners": [],
-  "documentation": "https://github.com/lfpoulain/Cornelius-Wand",
-  "issue_tracker": "https://github.com/lfpoulain/Cornelius-Wand/issues",
+  "codeowners": ["@lfpoulain"],
   "config_flow": true,
   "dependencies": [
     "bluetooth_adapters",
@@ -17,8 +15,10 @@
     "panel_custom",
     "websocket_api"
   ],
+  "documentation": "https://github.com/lfpoulain/Cornelius-Wand",
   "integration_type": "device",
   "iot_class": "local_push",
+  "issue_tracker": "https://github.com/lfpoulain/Cornelius-Wand/issues",
   "requirements": [],
   "version": "6.0.1"
 }

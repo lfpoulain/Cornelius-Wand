@@ -7,7 +7,7 @@
 <p>
   <a href="https://github.com/lfpoulain/Cornelius-Wand/actions/workflows/checks.yml"><img alt="Vérifications" src="https://github.com/lfpoulain/Cornelius-Wand/actions/workflows/checks.yml/badge.svg" /></a>
   <img alt="Intégration 6.0.1" src="https://img.shields.io/badge/int%C3%A9gration-6.0.1-3fb7a3?style=flat-square" />
-  <img alt="Firmware 6" src="https://img.shields.io/badge/firmware-6-3fb7a3?style=flat-square" />
+  <img alt="Firmware 7" src="https://img.shields.io/badge/firmware-7-3fb7a3?style=flat-square" />
   <img alt="Home Assistant" src="https://img.shields.io/badge/Home%20Assistant-int%C3%A9gration-0b1312?style=flat-square&amp;logo=homeassistant&amp;logoColor=white" />
   <img alt="Arduino Nano 33 BLE" src="https://img.shields.io/badge/Arduino-Nano%2033%20BLE-3fb7a3?style=flat-square" />
   <img alt="Stade expérimental" src="https://img.shields.io/badge/stade-exp%C3%A9rimental-ffb35c?style=flat-square" />
@@ -73,7 +73,7 @@ Un modèle prêt à l’emploi est **fourni** : [model/MagicWand_inferencing-1.0
 1. **Installez le modèle.** Dans l’Arduino IDE, ajoutez la bibliothèque [model/MagicWand_inferencing-1.0.4.zip](model/MagicWand_inferencing-1.0.4.zip) (Croquis → Inclure une bibliothèque → Ajouter la bibliothèque .ZIP). Elle reconnaît Alohomora. Pour d’autres gestes, enregistrez-les avec le sketch [collect](collect/collect.ino) et entraînez votre modèle.
 2. **Préparez la baguette.** Téléversez [wand](wand/). [wand/config.h](wand/config.h) associe déjà Alohomora au bouton 1 ; avec votre propre modèle, associez-y vos gestes.
 3. **Installez la caméra.** Copiez [secrets.example.h](camera/secrets.example.h) en `camera/secrets.h`, renseignez le Wi-Fi et téléversez [camera](camera/). Vérifiez le cadrage depuis sa page locale.
-4. **Ajoutez l’intégration.** Copiez [custom_components/cornelius_wand](custom_components/cornelius_wand/) dans `/config/custom_components/`, redémarrez Home Assistant et réveillez la baguette. Configurez les sorts, la caméra et la clé API TypeSafe.
+4. **Ajoutez l’intégration.** Depuis le **Marketplace** de Home Assistant (2026.11 et plus) : [![Ouvrir dans le Marketplace](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=lfpoulain&repository=Cornelius-Wand&category=integration), ou **Paramètres → Marketplace → ⋮ → Dépôts personnalisés**, avec l’adresse `https://github.com/lfpoulain/Cornelius-Wand` et la catégorie **Intégration**. Sinon, copiez [custom_components/cornelius_wand](custom_components/cornelius_wand/) dans `/config/custom_components/` et redémarrez. Réveillez ensuite la baguette, puis configurez les sorts, la caméra et la clé API TypeSafe.
 5. **Visez.** Calibrez l’axe de la baguette, placez les cibles dans le panneau **Baguette**, puis créez une automatisation par sort avec le [blueprint](blueprints/automation/cornelius_wand/sort.yaml) : une action par cible.
 
 **[Suivre le guide complet →](docs/guide.md)** — collecte, branchement, calibration, réglages et exemple d’automatisation.

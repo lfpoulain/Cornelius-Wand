@@ -28,6 +28,16 @@ La version du paquet de test est fixée dans [requirements_test.txt](../requirem
 
 Les adaptateurs Bluetooth, le réseau caméra et Jev sont simulés. La plupart des tests neutralisent les dépendances Home Assistant ; un test dédié charge le vrai serveur HTTP, enregistre le panneau et vérifie que son module JavaScript est servi à l’URL annoncée. Le rendu dans un navigateur et les communications avec les cartes demandent encore une vérification manuelle.
 
+## Publier une version (Marketplace)
+
+Le Marketplace de Home Assistant (2026.11+, ex-HACS) installe la dernière **release GitHub** du dépôt. Pour en publier une :
+
+1. Mettre la même version dans `custom_components/cornelius_wand/manifest.json` (`version`) et dans le [CHANGELOG](../CHANGELOG.md).
+2. Vérifier que la CI passe, y compris **hassfest** (manifeste) et **HACS** (ce qu’exige le Marketplace : `hacs.json`, icône `brand/icon.png`, description, topics).
+3. Créer la release avec un tag **identique** à la version (`6.0.1`, sans `v`) ; son texte est affiché dans la mise à jour chez les utilisateurs, actions à faire en premier.
+
+`hacs.json` (racine) donne le nom et la version minimale de Home Assistant. Sans release, le Marketplace installerait le dernier commit de `main`.
+
 ## Panneau JavaScript
 
 Avec **Node.js 24**, sans installation npm :

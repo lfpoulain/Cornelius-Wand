@@ -2,9 +2,11 @@
 
 [Accueil](README.md) · [Guide](docs/guide.md)
 
-## 6.0.1 — en préparation
+## 6.0.1
 
 Version de l’intégration associée au **firmware 7**.
+
+- Installation depuis le **Marketplace** de Home Assistant 2026.11 (ex-HACS) : `hacs.json`, icône de l’intégration, manifeste validé par hassfest et l’action HACS dans la CI.
 
 - Correction : le capteur **Cible visée** est mis à jour avant l’événement **Sort**. Une automatisation qui le lisait en condition obtenait la cible du sort précédent (une action de retard).
 - Correction : la calibration demandée depuis Home Assistant n’attend plus indéfiniment. La commande est abandonnée après 60 s sans baguette joignable, retentée toutes les 5 s, envoyée avant la relecture des réglages et jamais renvoyée une fois reçue ; un échange Bluetooth bloqué est abandonné au bout de 30 s.
