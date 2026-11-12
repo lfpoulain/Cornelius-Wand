@@ -103,3 +103,7 @@ Les annonces BTHome et le service Bluetooth des réglages ne sont pas authentifi
 Projet **expérimental**, avec des tests automatisés pour la logique de visée, l’intégration et le panneau. La CI vérifie Python et JavaScript sous Ubuntu ; elle ne compile pas les sketches Arduino. Les tests en simulation ne remplacent pas les essais sur les cartes, et la précision de la visée dépend du modèle, du cadrage et de l’éclairage.
 
 Pour travailler dessus : [développement](docs/developpement.md), [contribution](CONTRIBUTING.md), [historique](CHANGELOG.md).
+
+## 📜 Licence
+
+Projet libre sous [licence MIT](LICENSE) : utilisez-le, modifiez-le et partagez-le comme vous voulez, en gardant la mention de copyright. Le SDK Edge Impulse inclus dans [model/](model/) garde ses propres licences (Apache 2.0 et BSD), jointes dans le zip.
