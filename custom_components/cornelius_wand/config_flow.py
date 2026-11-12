@@ -148,4 +148,6 @@ class CorneliusOptionsFlow(OptionsFlow):
             # Après une erreur, on repropose la saisie telle quelle : un champ vidé reste vide
             data_schema=self.add_suggested_values_to_schema(schema, user_input if user_input is not None else options),
             errors=errors,
+            # Pas d'URL dans les traductions (hassfest) : l'exemple passe en paramètre
+            description_placeholders={"camera_example": "http://cornelius-camera.local"},
         )

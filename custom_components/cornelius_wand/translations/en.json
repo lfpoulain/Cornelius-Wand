@@ -30,7 +30,7 @@
         },
         "data_description": {
           "spells": "Comma separated, in the order of the firmware buttons (SPELLS in wand/config.h), 4 at most. Example: Alohomora, Lumos",
-          "camera_url": "Ceiling camera, for example http://cornelius-camera.local: the photo is read from /capture.jpg.",
+          "camera_url": "Ceiling camera, for example {camera_example}: the photo is read from /capture.jpg.",
           "typesafe_api_key": "Jev finds the shoulders and the hand holding the wand on the photo. Without a key, spells fire without a target."
         }
       }
