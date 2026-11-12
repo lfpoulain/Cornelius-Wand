@@ -1,0 +1,23 @@
+name: Signaler un problème
+description: Un sort, une visée ou un réglage ne fonctionne pas comme prévu.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Ce qui se passe
+      description: Étapes pour reproduire, résultat attendu et résultat obtenu.
+    validations:
+      required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Installation
+      description: Versions Home Assistant, intégration, firmware, et adaptateur ou proxy Bluetooth.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Informations utiles
+      description: Attributs du dernier sort ou extrait du journal. Retirez les clés, mots de passe et photos privées.

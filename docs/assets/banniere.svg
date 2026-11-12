@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="titre description">
+  <title id="titre">Cornelius · la baguette</title>
+  <desc id="description">Une baguette trace une courbe lumineuse vers une lampe, sur un fond vert sombre. Viser. Lancer un sort. Allumer la maison.</desc>
+  <defs>
+    <linearGradient id="fond" x2="1" y2="1">
+      <stop stop-color="#0b1312"/><stop offset="1" stop-color="#050c0a"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop stop-color="#3fb7a3" stop-opacity=".22"/><stop offset="1" stop-color="#3fb7a3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lampe">
+      <stop stop-color="#ffe6ac" stop-opacity=".24"/><stop offset="1" stop-color="#ffe6ac" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bois" x2="0" y2="1">
+      <stop stop-color="#81634b"/><stop offset=".4" stop-color="#b59168"/><stop offset="1" stop-color="#493a2d"/>
+    </linearGradient>
+    <linearGradient id="sort" x2="1" y2="0">
+      <stop stop-color="#3fb7a3"/><stop offset=".55" stop-color="#b39dff"/><stop offset="1" stop-color="#ffe6ac"/>
+    </linearGradient>
+    <filter id="lueur" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="420" rx="28" fill="url(#fond)"/>
+  <rect x="14" y="14" width="1252" height="392" rx="20" fill="none" stroke="#f2efe8" stroke-opacity=".08"/>
+  <ellipse cx="920" cy="220" rx="320" ry="220" fill="url(#halo)"/>
+  <g fill="#a2dace">
+    <circle cx="84" cy="74" r="1.5" opacity=".35"/>
+    <circle cx="580" cy="54" r="1" opacity=".4"/>
+    <circle cx="672" cy="342" r="1.5" opacity=".25"/>
+    <circle cx="1180" cy="54" r="1.4" opacity=".4"/>
+    <circle cx="1212" cy="340" r="1" opacity=".5"/>
+    <circle cx="728" cy="90" r="1.6" opacity=".5"/>
+    <circle cx="250" cy="376" r="1" opacity=".35"/>
+  </g>
+
+  <g font-family="'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+    <text x="72" y="100" fill="#87b7aa" font-size="12" font-weight="600" letter-spacing="4">LA MAISON, D’UN GESTE</text>
+    <text x="68" y="187" fill="#f2efe8" font-size="76" font-weight="600" letter-spacing="1">Cornelius</text>
+    <text x="72" y="243" fill="#6fd1bf" font-size="42" font-weight="300">la baguette</text>
+    <text x="74" y="291" fill="#b7c4bc" font-size="18">Viser. Lancer un sort. Allumer la maison.</text>
+    <rect x="72" y="321" width="158" height="30" rx="15" fill="#3fb7a3" fill-opacity=".09" stroke="#3fb7a3" stroke-opacity=".3"/>
+    <circle cx="89" cy="336" r="3" fill="#3fb7a3"/>
+    <text x="102" y="341" fill="#a7d9ce" font-size="12">HOME ASSISTANT</text>
+    <text x="248" y="341" fill="#81988e" font-size="12" letter-spacing="1">GESTES · BLUETOOTH · VISÉE</text>
+  </g>
+
+  <!-- La pièce, vue comme un petit théâtre de lumière. -->
+  <path d="M720 324 H1186 M1186 324 V84" fill="none" stroke="#77978a" stroke-opacity=".13" stroke-width="1"/>
+  <path d="M766 324 L849 264 H1186" fill="none" stroke="#77978a" stroke-opacity=".09"/>
+  <ellipse cx="1083" cy="230" rx="146" ry="174" fill="url(#lampe)"/>
+
+  <!-- Lampadaire : le sort a trouvé sa cible. -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1083 176 V310 M1053 311 H1113" fill="none" stroke="#9da79a" stroke-width="4"/>
+    <path d="M1055 103 H1111 L1130 165 H1036 Z" fill="#ffe6ac" fill-opacity=".12" stroke="#ead7a9" stroke-opacity=".85" stroke-width="2"/>
+    <ellipse cx="1083" cy="166" rx="46" ry="7" fill="#ffe6ac" fill-opacity=".16"/>
+    <circle cx="1083" cy="158" r="10" fill="#ffe6ac" filter="url(#lueur)" opacity=".8"/>
+    <circle cx="1083" cy="158" r="4" fill="#fff2ca"/>
+    <path d="M1032 85 H1020 V97 M1134 85 H1146 V97 M1020 181 V193 H1032 M1134 193 H1146 V181" fill="none" stroke="#3fb7a3" stroke-width="2" opacity=".7"/>
+  </g>
+
+  <!-- Le trajet du sort : imparfait comme un geste, précis à l’arrivée. -->
+  <path d="M910 215 C850 153 867 85 927 101 C981 115 922 189 962 193 C1003 198 995 146 1039 143" fill="none" stroke="url(#sort)" stroke-width="10" opacity=".22" filter="url(#lueur)"/>
+  <path d="M910 215 C850 153 867 85 927 101 C981 115 922 189 962 193 C1003 198 995 146 1039 143" fill="none" stroke="url(#sort)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M905 215 C847 176 838 115 866 93" fill="none" stroke="#3fb7a3" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="2 8" stroke-linecap="round"/>
+
+  <!-- Baguette de bois, manche annelé et pointe lumineuse. -->
+  <g transform="translate(790 330) rotate(-44)">
+    <path d="M0 -8 Q45 -8 167 -3 L167 3 Q45 8 0 8 Q-9 0 0 -8Z" fill="url(#bois)" stroke="#d6b58b" stroke-opacity=".3"/>
+    <path d="M5 -8 V8 M12 -8 V8 M19 -8 V8 M26 -8 V8 M33 -8 V8" stroke="#30291f" stroke-width="2" opacity=".7"/>
+    <path d="M41 -6 Q104 -4 160 -2" fill="none" stroke="#e4c391" stroke-opacity=".5" stroke-width="1"/>
+    <path d="M44 -6 V6" stroke="#3fb7a3" stroke-width="3"/>
+    <circle cx="167" r="10" fill="#6fd1bf" filter="url(#lueur)"/>
+    <circle cx="167" r="3.2" fill="#f2efe8"/>
+  </g>
+  <g fill="#d3eee3">
+    <circle cx="858" cy="200" r="1.8"/><circle cx="967" cy="85" r="1.4" opacity=".7"/>
+    <circle cx="998" cy="211" r="1.6" opacity=".7"/><circle cx="932" cy="239" r="1.1" opacity=".5"/>
+  </g>
+  <path d="M981 119 V131 M975 125 H987 M841 257 V265 M837 261 H845" fill="none" stroke="#b39dff" stroke-opacity=".75" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

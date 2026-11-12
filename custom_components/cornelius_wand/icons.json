@@ -1,0 +1,100 @@
+{
+  "entity": {
+    "button": {
+      "calibrate": {
+        "default": "mdi:axis-arrow"
+      },
+      "reset_settings": {
+        "default": "mdi:restore"
+      }
+    },
+    "event": {
+      "spell": {
+        "default": "mdi:magic-staff"
+      }
+    },
+    "image": {
+      "vision_photo": {
+        "default": "mdi:camera-outline"
+      }
+    },
+    "number": {
+      "tolerance": {
+        "default": "mdi:angle-acute"
+      },
+      "ceiling_pitch": {
+        "default": "mdi:arrow-collapse-up"
+      },
+      "floor_pitch": {
+        "default": "mdi:arrow-collapse-down"
+      },
+      "spell_threshold": {
+        "default": "mdi:magic-staff"
+      },
+      "prepare_threshold": {
+        "default": "mdi:timer-sand"
+      },
+      "spell_end_still": {
+        "default": "mdi:hand-back-left"
+      },
+      "still_gyro": {
+        "default": "mdi:pause-circle-outline"
+      },
+      "still_min": {
+        "default": "mdi:crosshairs"
+      },
+      "aim_fallback": {
+        "default": "mdi:crosshairs-question"
+      },
+      "aim_max_gesture": {
+        "default": "mdi:clock-outline"
+      },
+      "sleep_after": {
+        "default": "mdi:sleep"
+      },
+      "wake_threshold": {
+        "default": "mdi:gesture-swipe"
+      }
+    },
+    "switch": {
+      "spell_only": {
+        "default": "mdi:magic-staff",
+        "state": {
+          "on": "mdi:gesture"
+        }
+      },
+      "ignore_unaimed": {
+        "default": "mdi:crosshairs-off",
+        "state": {
+          "off": "mdi:crosshairs-question"
+        }
+      }
+    },
+    "sensor": {
+      "pitch": {
+        "default": "mdi:angle-acute"
+      },
+      "aimed_target": {
+        "default": "mdi:target"
+      },
+      "status": {
+        "default": "mdi:message-text-outline"
+      },
+      "targets": {
+        "default": "mdi:map-marker-multiple-outline"
+      },
+      "vision": {
+        "default": "mdi:eye-outline"
+      },
+      "jev_calls": {
+        "default": "mdi:counter"
+      },
+      "jev_calls_since_wake": {
+        "default": "mdi:sleep-off"
+      },
+      "calibration": {
+        "default": "mdi:axis-arrow"
+      }
+    }
+  }
+}

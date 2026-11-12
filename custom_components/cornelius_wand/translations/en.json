@@ -1,0 +1,194 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Add a wand",
+        "description": "Pick the wand. If it is not listed, cast a spell so it advertises, then try again.",
+        "data": {
+          "address": "Wand"
+        }
+      },
+      "bluetooth_confirm": {
+        "title": "Wand discovered",
+        "description": "Add the wand {name} ({address})?"
+      }
+    },
+    "abort": {
+      "already_configured": "This wand is already configured.",
+      "no_devices_found": "No wand found. Cast a spell so it advertises, then try again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Cornelius wand",
+        "data": {
+          "spells": "Spell names",
+          "camera_url": "Camera URL",
+          "typesafe_api_key": "TypeSafe API key"
+        },
+        "data_description": {
+          "spells": "Comma separated, in the order of the firmware buttons (SPELLS in wand/config.h), 4 at most. Example: Alohomora, Lumos",
+          "camera_url": "Ceiling camera, for example http://cornelius-camera.local: the photo is read from /capture.jpg.",
+          "typesafe_api_key": "Jev finds the shoulders and the hand holding the wand on the photo. Without a key, spells fire without a target."
+        }
+      }
+    },
+    "error": {
+      "no_spells": "Enter at least one spell.",
+      "too_many_spells": "The wand handles 4 spells at most.",
+      "duplicate_spells": "Two spells give the same identifier (case and accents do not count), or a name is reserved (\"Inconnu\") or has no letter or digit."
+    }
+  },
+  "entity": {
+    "button": {
+      "calibrate": {
+        "name": "Calibrate aiming axis"
+      },
+      "reset_settings": {
+        "name": "Default settings"
+      }
+    },
+    "event": {
+      "spell": {
+        "name": "Spell",
+        "state_attributes": {
+          "sort": {
+            "name": "Spell"
+          },
+          "nom": {
+            "name": "Name"
+          },
+          "bouton": {
+            "name": "Button"
+          },
+          "cible": {
+            "name": "Target"
+          },
+          "nom_cible": {
+            "name": "Target name"
+          },
+          "inclinaison": {
+            "name": "Pitch"
+          },
+          "surface": {
+            "name": "Aimed surface"
+          },
+          "direction": {
+            "name": "Arm direction"
+          },
+          "ecart": {
+            "name": "Gap with target"
+          },
+          "refus": {
+            "name": "Why no target"
+          },
+          "position_x": {
+            "name": "Position x"
+          },
+          "position_y": {
+            "name": "Position y"
+          },
+          "vision": {
+            "name": "Vision"
+          },
+          "attente_ms": {
+            "name": "Vision wait"
+          },
+          "analyse": {
+            "name": "Analysis started at"
+          },
+          "avance_ms": {
+            "name": "Analysis head start"
+          }
+        }
+      }
+    },
+    "image": {
+      "vision_photo": {
+        "name": "Analyzed photo"
+      }
+    },
+    "number": {
+      "tolerance": {
+        "name": "Aiming tolerance"
+      },
+      "ceiling_pitch": {
+        "name": "Ceiling threshold"
+      },
+      "floor_pitch": {
+        "name": "Floor threshold"
+      },
+      "spell_threshold": {
+        "name": "Spell threshold"
+      },
+      "prepare_threshold": {
+        "name": "Preparation threshold"
+      },
+      "spell_end_still": {
+        "name": "End-of-gesture stillness"
+      },
+      "still_gyro": {
+        "name": "Stillness threshold"
+      },
+      "still_min": {
+        "name": "Minimum aiming pause"
+      },
+      "aim_fallback": {
+        "name": "Aiming threshold without pause"
+      },
+      "aim_max_gesture": {
+        "name": "Maximum aim age"
+      },
+      "sleep_after": {
+        "name": "Sleep after"
+      },
+      "wake_threshold": {
+        "name": "Wake threshold"
+      }
+    },
+    "sensor": {
+      "pitch": {
+        "name": "Pitch"
+      },
+      "aimed_target": {
+        "name": "Aimed target"
+      },
+      "status": {
+        "name": "Status"
+      },
+      "targets": {
+        "name": "Targets"
+      },
+      "vision": {
+        "name": "Vision"
+      },
+      "jev_calls": {
+        "name": "Jev calls"
+      },
+      "jev_calls_since_wake": {
+        "name": "Jev calls since wake-up",
+        "state_attributes": {
+          "reveil": {
+            "name": "Wake-up"
+          }
+        }
+      },
+      "calibration": {
+        "name": "Calibration"
+      },
+      "voltage": {
+        "name": "Voltage"
+      }
+    },
+    "switch": {
+      "spell_only": {
+        "name": "Spell only mode"
+      },
+      "ignore_unaimed": {
+        "name": "Ignore spells without aim"
+      }
+    }
+  }
+}

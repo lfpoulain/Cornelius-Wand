@@ -1,0 +1,7 @@
+{
+  "exemple-avec.jpg": {
+    "epaules": [0.5, 0.5],
+    "main": [0.65, 0.5]
+  },
+  "exemple-vide.jpg": {}
+}

@@ -1,0 +1,228 @@
+blueprint:
+  name: Baguette Cornelius - un sort, une action par cible
+  description: >-
+    Une automatisation par sort de la baguette Cornelius. Quand ce sort est lancé, une seule
+    action part, choisie dans cet ordre :
+
+
+    1. **Baguette levée** : si l'inclinaison de la visée atteint le seuil choisi (plafond),
+    quelle que soit la cible trouvée par la caméra ;
+
+    2. **la cible visée** : la branche dont la clé correspond à l'attribut `cible` de
+    l'entité Sort (la clé s'affiche sous le nom de la cible dans le panneau **Baguette** :
+    « Lumière » → `lumiere`) ;
+
+    3. **sans cible** : la caméra n'a rien désigné (mode sort uniquement, visée ratée ou
+    cible hors tolérance).
+
+
+    Les emplacements laissés vides sont ignorés. Pour plus de 6 cibles, créer une seconde
+    automatisation avec le même sort et d'autres cibles.
+  domain: automation
+  author: Cornelius
+  source_url: https://github.com/lfpoulain/Cornelius-Wand/blob/main/blueprints/automation/cornelius_wand/sort.yaml
+  homeassistant:
+    min_version: "2026.7.0"
+  input:
+    spell_entity:
+      name: Entité Sort
+      description: L'entité « Sort » de la baguette (domaine event, intégration Cornelius).
+      selector:
+        entity:
+          filter:
+            - domain: event
+              integration: cornelius_wand
+    spell:
+      name: Sort
+      description: >-
+        Identifiant du sort, comme dans les types d'événement de l'entité Sort : le nom en
+        minuscules, sans accents (« Alohomora » → `alohomora`).
+      default: alohomora
+      selector:
+        text:
+
+    raised:
+      name: Baguette levée (prioritaire)
+      icon: mdi:arrow-up-bold
+      collapsed: true
+      input:
+        raised_pitch:
+          name: Inclinaison minimale
+          description: >-
+            À partir de cette inclinaison de la visée, cette action part à la place de la cible.
+            90° : jamais.
+          default: 90
+          selector:
+            number:
+              min: 0
+              max: 90
+              step: 1
+              unit_of_measurement: "°"
+              mode: slider
+        raised_action:
+          name: Action
+          default: []
+          selector:
+            action:
+
+    target_1:
+      name: Cible 1
+      icon: mdi:numeric-1-circle
+      input:
+        target_1_key:
+          name: Clé de la cible
+          description: Par exemple `lampadaire` ; vide pour ne pas utiliser cet emplacement.
+          default: ""
+          selector:
+            text:
+        target_1_action:
+          name: Action
+          default: []
+          selector:
+            action:
+    target_2:
+      name: Cible 2
+      icon: mdi:numeric-2-circle
+      collapsed: true
+      input:
+        target_2_key:
+          name: Clé de la cible
+          default: ""
+          selector:
+            text:
+        target_2_action:
+          name: Action
+          default: []
+          selector:
+            action:
+    target_3:
+      name: Cible 3
+      icon: mdi:numeric-3-circle
+      collapsed: true
+      input:
+        target_3_key:
+          name: Clé de la cible
+          default: ""
+          selector:
+            text:
+        target_3_action:
+          name: Action
+          default: []
+          selector:
+            action:
+    target_4:
+      name: Cible 4
+      icon: mdi:numeric-4-circle
+      collapsed: true
+      input:
+        target_4_key:
+          name: Clé de la cible
+          default: ""
+          selector:
+            text:
+        target_4_action:
+          name: Action
+          default: []
+          selector:
+            action:
+    target_5:
+      name: Cible 5
+      icon: mdi:numeric-5-circle
+      collapsed: true
+      input:
+        target_5_key:
+          name: Clé de la cible
+          default: ""
+          selector:
+            text:
+        target_5_action:
+          name: Action
+          default: []
+          selector:
+            action:
+    target_6:
+      name: Cible 6
+      icon: mdi:numeric-6-circle
+      collapsed: true
+      input:
+        target_6_key:
+          name: Clé de la cible
+          default: ""
+          selector:
+            text:
+        target_6_action:
+          name: Action
+          default: []
+          selector:
+            action:
+
+    no_target:
+      name: Sans cible
+      icon: mdi:crosshairs-question
+      collapsed: true
+      input:
+        no_target_action:
+          name: Action
+          description: Laisser vide pour ne rien faire quand aucune cible n'est reconnue.
+          default: []
+          selector:
+            action:
+
+mode: queued
+max: 5
+
+triggers:
+  - trigger: event.received
+    target:
+      entity_id: !input spell_entity
+    options:
+      event_type:
+        - !input spell
+
+variables:
+  spell_entity: !input spell_entity
+  raised_pitch: !input raised_pitch
+  target_1_key: !input target_1_key
+  target_2_key: !input target_2_key
+  target_3_key: !input target_3_key
+  target_4_key: !input target_4_key
+  target_5_key: !input target_5_key
+  target_6_key: !input target_6_key
+  # Lus sur l'entité Sort, dont l'état vient d'être écrit par ce sort
+  aimed: "{{ state_attr(spell_entity, 'cible') }}"
+  pitch: "{{ state_attr(spell_entity, 'inclinaison') }}"
+
+actions:
+  - choose:
+      - alias: Baguette levée
+        conditions:
+          - "{{ raised_pitch < 90 and pitch is number and pitch >= raised_pitch }}"
+        sequence: !input raised_action
+      - alias: Cible 1
+        conditions:
+          - "{{ target_1_key | trim != '' and aimed == target_1_key | trim }}"
+        sequence: !input target_1_action
+      - alias: Cible 2
+        conditions:
+          - "{{ target_2_key | trim != '' and aimed == target_2_key | trim }}"
+        sequence: !input target_2_action
+      - alias: Cible 3
+        conditions:
+          - "{{ target_3_key | trim != '' and aimed == target_3_key | trim }}"
+        sequence: !input target_3_action
+      - alias: Cible 4
+        conditions:
+          - "{{ target_4_key | trim != '' and aimed == target_4_key | trim }}"
+        sequence: !input target_4_action
+      - alias: Cible 5
+        conditions:
+          - "{{ target_5_key | trim != '' and aimed == target_5_key | trim }}"
+        sequence: !input target_5_action
+      - alias: Cible 6
+        conditions:
+          - "{{ target_6_key | trim != '' and aimed == target_6_key | trim }}"
+        sequence: !input target_6_action
+      - alias: Sans cible
+        conditions:
+          - "{{ aimed is none }}"
+        sequence: !input no_target_action

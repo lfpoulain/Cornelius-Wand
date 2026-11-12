@@ -1,0 +1,194 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Ajouter une baguette",
+        "description": "Choisis la baguette. Si elle n'apparaît pas, lance un sort pour qu'elle émette, puis réessaie.",
+        "data": {
+          "address": "Baguette"
+        }
+      },
+      "bluetooth_confirm": {
+        "title": "Baguette découverte",
+        "description": "Ajouter la baguette {name} ({address}) ?"
+      }
+    },
+    "abort": {
+      "already_configured": "Cette baguette est déjà configurée.",
+      "no_devices_found": "Aucune baguette détectée. Lance un sort pour qu'elle émette, puis réessaie."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Baguette Cornelius",
+        "data": {
+          "spells": "Noms des sorts",
+          "camera_url": "Adresse de la caméra",
+          "typesafe_api_key": "Clé API TypeSafe"
+        },
+        "data_description": {
+          "spells": "Séparés par des virgules, dans l'ordre des boutons du firmware (SPELLS dans wand/config.h), 4 au plus. Exemple : Alohomora, Lumos",
+          "camera_url": "Caméra au plafond, par exemple http://cornelius-camera.local : la photo est lue sur /capture.jpg.",
+          "typesafe_api_key": "Jev trouve sur la photo les épaules et la main qui tient la baguette. Sans clé, les sorts partent sans cible."
+        }
+      }
+    },
+    "error": {
+      "no_spells": "Indique au moins un sort.",
+      "too_many_spells": "La baguette gère 4 sorts au maximum.",
+      "duplicate_spells": "Deux sorts donnent le même identifiant (majuscules et accents ne comptent pas), ou un nom est réservé (« Inconnu ») ou sans lettre ni chiffre."
+    }
+  },
+  "entity": {
+    "button": {
+      "calibrate": {
+        "name": "Calibrer l'axe de visée"
+      },
+      "reset_settings": {
+        "name": "Réglages par défaut"
+      }
+    },
+    "event": {
+      "spell": {
+        "name": "Sort",
+        "state_attributes": {
+          "sort": {
+            "name": "Sort"
+          },
+          "nom": {
+            "name": "Nom"
+          },
+          "bouton": {
+            "name": "Bouton"
+          },
+          "cible": {
+            "name": "Cible"
+          },
+          "nom_cible": {
+            "name": "Nom de la cible"
+          },
+          "inclinaison": {
+            "name": "Inclinaison"
+          },
+          "surface": {
+            "name": "Surface visée"
+          },
+          "direction": {
+            "name": "Direction du bras"
+          },
+          "ecart": {
+            "name": "Écart avec la cible"
+          },
+          "refus": {
+            "name": "Pourquoi aucune cible"
+          },
+          "position_x": {
+            "name": "Position x"
+          },
+          "position_y": {
+            "name": "Position y"
+          },
+          "vision": {
+            "name": "Vision"
+          },
+          "attente_ms": {
+            "name": "Attente de la vision"
+          },
+          "analyse": {
+            "name": "Analyse lancée à"
+          },
+          "avance_ms": {
+            "name": "Avance de l'analyse"
+          }
+        }
+      }
+    },
+    "image": {
+      "vision_photo": {
+        "name": "Photo analysée"
+      }
+    },
+    "number": {
+      "tolerance": {
+        "name": "Tolérance de la visée"
+      },
+      "ceiling_pitch": {
+        "name": "Seuil du plafond"
+      },
+      "floor_pitch": {
+        "name": "Seuil du sol"
+      },
+      "spell_threshold": {
+        "name": "Seuil du sort"
+      },
+      "prepare_threshold": {
+        "name": "Seuil de préparation"
+      },
+      "spell_end_still": {
+        "name": "Arrêt en fin de geste"
+      },
+      "still_gyro": {
+        "name": "Seuil d'immobilité"
+      },
+      "still_min": {
+        "name": "Pause de visée minimale"
+      },
+      "aim_fallback": {
+        "name": "Seuil de visée sans pause"
+      },
+      "aim_max_gesture": {
+        "name": "Âge maximal de la visée"
+      },
+      "sleep_after": {
+        "name": "Veille après"
+      },
+      "wake_threshold": {
+        "name": "Seuil de réveil"
+      }
+    },
+    "sensor": {
+      "pitch": {
+        "name": "Inclinaison"
+      },
+      "aimed_target": {
+        "name": "Cible visée"
+      },
+      "status": {
+        "name": "Statut"
+      },
+      "targets": {
+        "name": "Cibles"
+      },
+      "vision": {
+        "name": "Vision"
+      },
+      "jev_calls": {
+        "name": "Appels à Jev"
+      },
+      "jev_calls_since_wake": {
+        "name": "Appels à Jev depuis le réveil",
+        "state_attributes": {
+          "reveil": {
+            "name": "Réveil"
+          }
+        }
+      },
+      "calibration": {
+        "name": "Calibration"
+      },
+      "voltage": {
+        "name": "Tension"
+      }
+    },
+    "switch": {
+      "spell_only": {
+        "name": "Mode sort uniquement"
+      },
+      "ignore_unaimed": {
+        "name": "Ignorer les sorts sans visée"
+      }
+    }
+  }
+}

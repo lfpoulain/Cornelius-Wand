@@ -1,0 +1,26 @@
+# Identifiants Wi-Fi et mot de passe OTA de la caméra
+camera/secrets.h
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+.coverage
+htmlcov/
+
+# Fichiers locaux et sorties de compilation
+.env
+.env.*
+!.env.example
+build/
+*.bin
+*.elf
+*.hex
+
+# Banc d'essai de la vision : clés, photos de la pièce et résultats
+bench/.env
+bench/photos/
+bench/results/
+bench/truth.json

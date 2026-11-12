@@ -1,0 +1,5 @@
+# Tests de l'intégration : pip install -r requirements_test.txt
+pytest-homeassistant-custom-component==0.13.316
+# Paquets de l'intégration usb, dont dépend bluetooth : Home Assistant ne les installe qu'au démarrage
+aiousbwatcher==1.1.1
+pyserial==3.5

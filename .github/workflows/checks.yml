@@ -1,0 +1,47 @@
+name: Vérifications
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  home-assistant:
+    name: Home Assistant et Python
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements_test.txt
+      - name: Installer les dépendances de test
+        run: python -m pip install -r requirements_test.txt ruff==0.15.0
+      - name: Vérifier le code Python
+        run: python -m ruff check custom_components tests bench
+      - name: Tester l'intégration
+        run: python -m pytest -q
+
+  panel:
+    name: Panneau JavaScript
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+      - name: Vérifier la syntaxe
+        run: node --check custom_components/cornelius_wand/www/panel.js
+      - name: Tester le panneau
+        run: node --test tests/frontend/*.test.cjs
